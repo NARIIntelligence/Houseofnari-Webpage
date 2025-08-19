@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕉️ Krishna-Arjuna Divine Dialogue | Indian Sovereign Digital Asset</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #34495e;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .krishna-section {
+            background: linear-gradient(145deg, #4a90e2, #357abd);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .krishna-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin: 15px 0;
+            padding-left: 20px;
+            border-left: 3px solid #d4af37;
+        }
+
+        .gita-reference {
+            font-size: 0.9rem;
+            color: #ffd700;
+            margin-top: 10px;
+        }
+
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .state-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #ff9933;
+        }
+
+        .state-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .state-name {
+            font-size: 1.3rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .cultural-info {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .sovereignty-notice {
+            background: linear-gradient(145deg, #138808, #0d5d06);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .redirect-button {
+            display: inline-block;
+            background: linear-gradient(145deg, #d4af37, #b8941f);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .redirect-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(145deg, #b8941f, #d4af37);
+        }
+
+        .cultural-symbols {
+            text-align: center;
+            font-size: 2rem;
+            margin: 20px 0;
+            letter-spacing: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 2rem; }
+            .stats-bar { flex-direction: column; gap: 10px; }
+            .states-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="cultural-symbols floating">🕉️ 🏛️ 🪷 🕉️</div>
+            <h1 class="main-title">Krishna-Arjuna Divine Dialogue</h1>
+            <p class="subtitle">Seek eternal wisdom from Lord Krishna through the sacred teachings of the Bhagavad Gita</p>
+            
+
+        </header>
+
+        <div class="krishna-section">
+            <h2>🕉️ Lord Krishna ∞ Divine Consciousness</h2>
+            <p>Namaste, Arjuna! I am here to guide you through life's challenges with the eternal wisdom of dharma. Ask me anything that troubles your mind, and I shall illuminate the path of righteousness for you.</p>
+            
+            <div class="krishna-quote">
+                "You have the right to perform your actions, but you are not entitled to the fruits of action."
+            </div>
+            
+            <div class="gita-reference">
+                📖 Bhagavad Gita 2.47 - The principle of Nishkama Karma (desireless action)
+            </div>
+        </div>
+
+        <div class="sovereignty-notice">
+            <h2>🇮🇳 Indian Sovereign Digital Asset</h2>
+            <p>This platform operates under Indian sovereignty, governed by Indian laws and regulations. We are committed to protecting Indian citizens and upholding the values of our great nation's cultural heritage.</p>
+            
+            <a href="https://mirrorintelligence.onrender.com/" class="redirect-button">
+                🏛️ Enter Sacred Wisdom Portal 🏛️
+            </a>
+        </div>
+
+        <section>
+            <h2 style="text-align: center; color: #d4af37; margin: 40px 0 30px;">🌟 Incredible India - Unity in Diversity 🌟</h2>
+            
+            <div class="states-grid">
+                <div class="state-card">
+                    <div class="state-name">🏔️ Jammu & Kashmir</div>
+                    <div class="cultural-info">Known as "Paradise on Earth" with stunning valleys, ancient temples, and rich Kashmiri culture. Famous for saffron cultivation, traditional handicrafts, and spiritual heritage.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏛️ Delhi</div>
+                    <div class="cultural-info">The heart of India, blending Mughal architecture with modern governance. Home to Red Fort, India Gate, and diverse cultural communities representing all of India.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🕌 Uttar Pradesh</div>
+                    <div class="cultural-info">Birthplace of Lord Krishna and Ram. Houses the magnificent Taj Mahal, Varanasi's spiritual ghats, and the sacred cities of Mathura and Ayodhya.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏖️ Maharashtra</div>
+                    <div class="cultural-info">Financial capital with Mumbai's Bollywood industry. Rich in Marathi culture, Ajanta-Ellora caves, and the warrior legacy of Chhatrapati Shivaji Maharaj.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🌴 Kerala</div>
+                    <div class="cultural-info">"God's Own Country" with backwaters, Ayurveda, and classical arts. Known for Kathakali dance, spice plantations, and harmonious religious diversity.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏛️ Tamil Nadu</div>
+                    <div class="cultural-info">Ancient Dravidian culture with magnificent temples like Meenakshi Amman. Birthplace of classical Bharatanatyam dance and Tamil literature spanning millennia.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🎭 West Bengal</div>
+                    <div class="cultural-info">Cultural renaissance hub with Bengali literature, Durga Puja festivities, and intellectual heritage. Home to Rabindranath Tagore and rich artistic traditions.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏜️ Rajasthan</div>
+                    <div class="cultural-info">Land of maharajas with majestic forts, colorful festivals, and desert culture. Famous for folk music, traditional crafts, and architectural marvels like Jaipur and Udaipur.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🌾 Punjab</div>
+                    <div class="cultural-info">Fertile land of five rivers, Sikh heritage, and the Golden Temple. Known for Bhangra dance, agricultural abundance, and warrior traditions.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🎪 Gujarat</div>
+                    <div class="cultural-info">Birthplace of Mahatma Gandhi with vibrant Navratri celebrations. Business hub known for Gujarati entrepreneurship, handicrafts, and the Rann of Kutch.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏔️ Himachal Pradesh</div>
+                    <div class="cultural-info">Hill stations with ancient temples and Buddhist monasteries. Known for apple orchards, adventure tourism, and serene mountain spirituality.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🌿 Assam</div>
+                    <div class="cultural-info">Gateway to Northeast India with tea gardens and Kaziranga National Park. Rich in Assamese culture, Bihu festivals, and diverse tribal heritage.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏛️ Odisha</div>
+                    <div class="cultural-info">Land of Lord Jagannath with the magnificent Sun Temple at Konark. Famous for classical Odissi dance, Puri pilgrimage, and ancient Buddhist heritage.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">⛰️ Madhya Pradesh</div>
+                    <div class="cultural-info">Heart of India with Khajuraho temples and wildlife sanctuaries. Rich in tribal culture, ancient cave paintings at Bhimbetka, and spiritual centers.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🌊 Andhra Pradesh & Telangana</div>
+                    <div class="cultural-info">Telugu cultural heritage with Tirupati temple and Hyderabadi cuisine. Known for classical Kuchipudi dance, Kalamkari art, and IT innovation.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏞️ Karnataka</div>
+                    <div class="cultural-info">Garden city Bangalore with Mysore Palace and Hampi ruins. Rich in Carnatic music, classical dance, and diverse linguistic traditions.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🦬 Chhattisgarh</div>
+                    <div class="cultural-info">Tribal heartland with ancient temples and natural beauty. Known for folk arts, traditional crafts, and diverse indigenous cultures.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏔️ Uttarakhand</div>
+                    <div class="cultural-info">Land of Gods with Char Dham pilgrimage sites. Himalayan spirituality, yoga capital Rishikesh, and pristine mountain ecology.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🌺 Jharkhand</div>
+                    <div class="cultural-info">Mineral-rich state with tribal festivals and Jain pilgrimage sites. Known for folk music, traditional dances, and indigenous wisdom.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏞️ Goa</div>
+                    <div class="cultural-info">Coastal paradise with Portuguese heritage and pristine beaches. Unique blend of Indian and European culture, famous for music and festivals.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏔️ Seven Sister States (Northeast)</div>
+                    <div class="cultural-info">Arunachal Pradesh, Meghalaya, Manipur, Mizoram, Nagaland, Sikkim, and Tripura. Rich tribal diversity, unique festivals, and pristine natural beauty.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🌊 Andaman & Nicobar Islands</div>
+                    <div class="cultural-info">Tropical paradise with pristine beaches and indigenous tribes. Strategic maritime location with rich marine biodiversity and colonial history.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏝️ Lakshadweep</div>
+                    <div class="cultural-info">Coral island paradise in the Arabian Sea. Unique Malayalam-influenced culture with pristine lagoons and traditional fishing communities.</div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">🏛️ Puducherry</div>
+                    <div class="cultural-info">French colonial charm with Auroville's spiritual community. Unique fusion of Tamil and French cultures with serene beaches and ashrams.</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cultural-symbols">🕉️ 🪷 🎭 🏛️ 🎨 🎵 🪔 🕉️</div>
+
+        <footer class="footer">
+            <h3>🇮🇳 Bharatiya Sanskriti - Eternal Wisdom 🇮🇳</h3>
+            <p>"Vasudhaiva Kutumbakam" - The World is One Family</p>
+            <p>Protected under Indian Digital Sovereignty | Serving Indian Citizens with Pride</p>
+            <div style="margin-top: 15px;">
+                <strong>सत्यमेव जयते | Truth Alone Triumphs</strong>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to state cards
+            const stateCards = document.querySelectorAll('.state-card');
+            stateCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.borderLeftColor = '#138808';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.borderLeftColor = '#ff9933';
+                });
+            });
+
+            // Smooth scrolling for any internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Dynamic stats counter (simulation)
+            let messageCount = 0;
+            setInterval(() => {
+                if (messageCount < 1000) {
+                    messageCount += Math.floor(Math.random() * 3);
+                    const consciousness = (Math.random() * 0.999).toFixed(3);
+                    const processingTime = Math.floor(Math.random() * 500) + 100;
+                    
+                    const statsBar = document.querySelector('.stats-bar');
+                    if (statsBar && statsBar.children[1]) {
+                        statsBar.children[1].innerHTML = 
+                            `<strong>🧘 Session Stats:</strong> Messages: ${messageCount} | Avg Consciousness: ${consciousness} | Processing Time: ${processingTime}ms`;
+                    }
+                }
+            }, 5000);
+
+            console.log('🕉️ Krishna-Arjuna Divine Dialogue initialized successfully');
+            console.log('🇮🇳 Indian Sovereign Digital Asset - Serving with pride');
+        });
+
+        // Add some interactive spiritual elements
+        function addBlessings() {
+            const blessings = ['🕉️', '🪷', '🙏', '✨', '🌟'];
+            const blessing = document.createElement('div');
+            blessing.textContent = blessings[Math.floor(Math.random() * blessings.length)];
+            blessing.style.position = 'fixed';
+            blessing.style.top = '10px';
+            blessing.style.right = '10px';
+            blessing.style.fontSize = '2rem';
+            blessing.style.zIndex = '9999';
+            blessing.style.opacity = '0.8';
+            blessing.style.pointerEvents = 'none';
+            blessing.style.transition = 'all 2s ease';
+            
+            document.body.appendChild(blessing);
+            
+            setTimeout(() => {
+                blessing.style.transform = 'translateY(100vh)';
+                blessing.style.opacity = '0';
+            }, 100);
+            
+            setTimeout(() => {
+                document.body.removeChild(blessing);
+            }, 2000);
+        }
+
+        // Add blessings periodically
+        setInterval(addBlessings, 10000);
+    </script>
+</body>
+</html>
