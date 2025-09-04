@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Dialogue Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .main-title {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .tab-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #34495e;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            background: #34495e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .tab-btn:hover {
+            background: #4a6741;
+        }
+
+        .tab-btn.active {
+            background: #d4af37;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 30px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #138808;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff9933, #d4af37);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Payment Details */
+        .payment-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+
+        .payment-method {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Chat Styles */
+        .chat-box {
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .user-msg {
+            background: #e3f2fd;
+            text-align: right;
+        }
+
+        .bot-msg {
+            background: #fff3e0;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background: white;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* States Grid */
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .state-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .state-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .state-name {
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+
+        .region-title {
+            font-size: 1.2rem;
+            color: #138808;
+            margin: 20px 0 10px;
+            font-weight: bold;
+            border-bottom: 2px solid #138808;
+            padding-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .tab-nav {
+                flex-direction: column;
+            }
+            .states-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="main-title">Divine Dialogue Portal</h1>
+            <p>Voluntary Support • Divine Chatbot • Incredible India</p>
+        </header>
+
+        <div class="tab-container">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="switchTab(0)">Voluntary Support</button>
+                <button class="tab-btn" onclick="switchTab(1)">Divine Chatbot</button>
+                <button class="tab-btn" onclick="switchTab(2)">Incredible India</button>
+            </div>
+
+            <!-- Tab 1: Voluntary Support -->
+            <div class="tab-content active">
+                <h2>Voluntary Support</h2>
+                <p>Your optional contribution helps maintain our spiritual service</p>
+
+                <form id="donationForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Donation Amount</label>
+                        <select id="amount" class="form-control" required>
+                            <option value="">Select Amount</option>
+                            <option value="108">₹108 - Basic Support</option>
+                            <option value="501">₹501 - Standard Support</option>
+                            <option value="1008">₹1008 - Premium Support</option>
+                            <option value="custom">Custom Amount</option>
+                        </select>
+                    </div>
+
+                    <div id="customAmount" class="form-group" style="display:none;">
+                        <label for="customValue">Enter Amount (Min ₹51)</label>
+                        <input type="number" id="customValue" class="form-control" min="51">
+                    </div>
+
+                    <button type="submit" class="btn">Submit Donation</button>
+                </form>
+
+                <div class="payment-info">
+                    <h3>Payment Methods Available:</h3>
+                    
+                    <div class="payment-method">
+                        <h4>UPI Payment</h4>
+                        <p><strong>UPI ID:</strong> 8127130949-3@ybl</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tab 2: Divine Intelligence -->
+            <div class="tab-content">
+                <h2>Divine Intelligence Portal</h2>
+                <p>Access advanced spiritual guidance and wisdom through our AI platform</p>
+
+                <div style="text-align: center; padding: 40px;">
+                    <h3 style="color: #d4af37; margin-bottom: 20px;">Visit Our Intelligence Platform</h3>
+                    <p style="margin-bottom: 30px; font-size: 1.1rem;">
+                        Experience advanced divine dialogue and spiritual guidance with our comprehensive AI system
+                    </p>
+                    
+                    <a href="https://www.nariintelligence.com" target="_blank" 
+                       style="display: inline-block; background: linear-gradient(45deg, #ff9933, #d4af37); 
+                              color: white; padding: 15px 30px; text-decoration: none; 
+                              border-radius: 25px; font-size: 1.2rem; font-weight: bold; 
+                              box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+                        Visit NARI Intelligence
+                    </a>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; border: 1px solid #ddd;">
+                        <h4 style="color: #138808; margin-bottom: 15px;">Platform Features:</h4>
+                        <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                            <li>Advanced AI-powered spiritual guidance</li>
+                            <li>Personalized divine dialogue sessions</li>
+                            <li>Comprehensive wisdom database</li>
+                            <li>Interactive learning modules</li>
+                            <li>Community support features</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Incredible India -->
+            <div class="tab-content">
+                <h2>Incredible India - Complete Guide</h2>
+                <p>Discover all states, union territories, and islands of our great nation</p>
+
+                <div class="region-title">States (28)</div>
+                <div class="states-grid">
+                    <div class="state-card">
+                        <div class="state-name">Andhra Pradesh</div>
+                        <p>Capital: Amaravati. Known for Tirupati temple, spicy cuisine, and Kuchipudi dance.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Arunachal Pradesh</div>
+                        <p>Capital: Itanagar. "Land of Dawn-Lit Mountains" with diverse tribal culture.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Assam</div>
+                        <p>Capital: Dispur. Famous for tea gardens, silk, and Kaziranga National Park.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Bihar</div>
+                        <p>Capital: Patna. Birthplace of Buddhism and Jainism, ancient Nalanda University.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Chhattisgarh</div>
+                        <p>Capital: Raipur. Rich in minerals, tribal culture, and dense forests.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Goa</div>
+                        <p>Capital: Panaji. Beautiful beaches, Portuguese heritage, and vibrant nightlife.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Gujarat</div>
+                        <p>Capital: Gandhinagar. Business hub, birthplace of Mahatma Gandhi, Rann of Kutch.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Haryana</div>
+                        <p>Capital: Chandigarh (shared). Agricultural state, wrestling tradition, Kurukshetra.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Himachal Pradesh</div>
+                        <p>Capital: Shimla. Hill stations, apple orchards, and Buddhist monasteries.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Jharkhand</div>
+                        <p>Capital: Ranchi. Mineral-rich state, tribal festivals, and Jain pilgrimage sites.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Karnataka</div>
+                        <p>Capital: Bangalore. IT hub, Mysore Palace, classical music, and coffee plantations.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Kerala</div>
+                        <p>Capital: Thiruvananthapuram. "God's Own Country" with backwaters and Ayurveda.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Madhya Pradesh</div>
+                        <p>Capital: Bhopal. Heart of India, Khajuraho temples, and wildlife sanctuaries.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Maharashtra</div>
+                        <p>Capital: Mumbai. Financial capital, Bollywood, and Maratha heritage.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Manipur</div>
+                        <p>Capital: Imphal. "Jewel of India" with classical dance and polo origins.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Meghalaya</div>
+                        <p>Capital: Shillong. "Abode of Clouds" with living root bridges and matriarchal society.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Mizoram</div>
+                        <p>Capital: Aizawl. Mountainous state with unique culture and bamboo forests.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Nagaland</div>
+                        <p>Capital: Kohima. Land of festivals, tribal heritage, and hornbill birds.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Odisha</div>
+                        <p>Capital: Bhubaneswar. Jagannath Temple, Sun Temple Konark, and Odissi dance.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Punjab</div>
+                        <p>Capital: Chandigarh (shared). Land of five rivers, Golden Temple, and Bhangra.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Rajasthan</div>
+                        <p>Capital: Jaipur. Desert state with magnificent forts, palaces, and folk culture.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Sikkim</div>
+                        <p>Capital: Gangtok. Himalayan state with Buddhist monasteries and organic farming.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Tamil Nadu</div>
+                        <p>Capital: Chennai. Ancient temples, classical arts, and Dravidian architecture.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Telangana</div>
+                        <p>Capital: Hyderabad. IT hub, Charminar, and famous biryani cuisine.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Tripura</div>
+                        <p>Capital: Agartala. Rich in handicrafts, bamboo products, and tribal culture.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Uttar Pradesh</div>
+                        <p>Capital: Lucknow. Most populous state, Taj Mahal, and holy cities like Varanasi.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Uttarakhand</div>
+                        <p>Capital: Dehradun. "Land of Gods" with Char Dham pilgrimage and hill stations.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">West Bengal</div>
+                        <p>Capital: Kolkata. Cultural capital, Durga Puja, and Bengali literature.</p>
+                    </div>
+                </div>
+
+                <div class="region-title">Union Territories (8)</div>
+                <div class="states-grid">
+                    <div class="state-card">
+                        <div class="state-name">Andaman and Nicobar Islands</div>
+                        <p>Capital: Port Blair. Tropical paradise with pristine beaches and cellular jail history.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Chandigarh</div>
+                        <p>Capital: Chandigarh. Planned city, shared capital of Punjab and Haryana.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Dadra and Nagar Haveli and Daman and Diu</div>
+                        <p>Capital: Daman. Portuguese heritage, beaches, and tribal culture.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Delhi (NCT)</div>
+                        <p>Capital: New Delhi. National capital with Red Fort, India Gate, and diverse culture.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Jammu and Kashmir</div>
+                        <p>Summer Capital: Srinagar, Winter Capital: Jammu. "Paradise on Earth" with beautiful valleys.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Ladakh</div>
+                        <p>Capital: Leh. High-altitude desert, Buddhist monasteries, and adventure tourism.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Lakshadweep</div>
+                        <p>Capital: Kavaratti. Coral islands in Arabian Sea with pristine lagoons.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Puducherry</div>
+                        <p>Capital: Puducherry. French colonial heritage and spiritual center Auroville.</p>
+                    </div>
+                </div>
+
+                <div class="region-title">Indian Ocean Territories</div>
+                <div class="states-grid">
+                    <div class="state-card">
+                        <div class="state-name">Andaman Islands</div>
+                        <p>Major islands: North Andaman, Middle Andaman, South Andaman. Rich marine biodiversity.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Nicobar Islands</div>
+                        <p>Major islands: Car Nicobar, Great Nicobar. Indigenous tribes and coconut plantations.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Lakshadweep Islands</div>
+                        <p>10 inhabited islands including Kavaratti, Agatti, Minicoy. Coral reef paradise.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Katchal Island</div>
+                        <p>Part of Nicobar group. Tsunami-affected area now rebuilt with modern infrastructure.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Ross Island</div>
+                        <p>Former British administrative center, now a tourist destination with ruins.</p>
+                    </div>
+                    <div class="state-card">
+                        <div class="state-name">Neil Island (Shaheed Dweep)</div>
+                        <p>Popular tourist destination with beautiful beaches and coral reefs.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
+                    <h3>Satyameva Jayate - Truth Alone Triumphs</h3>
+                    <p>"Vasudhaiva Kutumbakam" - The World is One Family</p>
+                    <p style="margin-top: 10px; color: #666;">Unity in Diversity - India's Eternal Strength</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching
+        function switchTab(tabIndex) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            buttons[tabIndex].classList.add('active');
+            contents[tabIndex].classList.add('active');
+        }
+
+        // Donation form
+        document.getElementById('amount').addEventListener('change', function() {
+            const customDiv = document.getElementById('customAmount');
+            customDiv.style.display = this.value === 'custom' ? 'block' : 'none';
+        });
+
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your voluntary support! Please proceed with payment using the details provided.');
+        });
+
+        // Chat functionality
+        const responses = [
+            "Remember, you have the right to perform your actions, but not to the fruits of action.",
+            "The soul is never born nor dies. It is eternal, permanent, and primeval.",
+            "When meditation is mastered, the mind is unwavering like a flame in a windless place.",
+            "Those who see all beings in themselves harbor no hatred.",
+            "Abandon all varieties of religion and surrender unto Me. I shall deliver you.",
+            "Whatever you do, do it as an offering to the Divine."
+        ];
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            
+            if (input.value.trim()) {
+                // Add user message
+                const userMsg = document.createElement('div');
+                userMsg.className = 'message user-msg';
+                userMsg.innerHTML = '<strong>You:</strong> ' + input.value;
+                messages.appendChild(userMsg);
+
+                // Add bot response
+                setTimeout(() => {
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'message bot-msg';
+                    const response = responses[Math.floor(Math.random() * responses.length)];
+                    botMsg.innerHTML = '<strong>Lord Krishna:</strong> ' + response;
+                    messages.appendChild(botMsg);
+                    messages.scrollTop = messages.scrollHeight;
+                }, 1000);
+
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        function handleEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html>
